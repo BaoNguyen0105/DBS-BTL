@@ -1,0 +1,65 @@
+<style>
+    .top-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+	height: 70px;
+	border: 1px solid lightgray;
+	align-items: center;
+	background-color: white;
+    z-index: 5;
+    }
+    .top-bar .info-button{
+        width: 70px;
+        height: 100%;
+        background: none;
+        border:0;
+        margin-left: auto;
+        padding: 0;
+        margin-right: 30px;
+        border-radius: 35px;
+    }
+    .top-bar  .info-button img{
+        width: 70px;
+        margin: 0;
+    }
+    .top-bar  .info-button:hover{
+        background-color: lightgray;
+        cursor: pointer;
+    }
+    .top-bar .go-back{
+        height: 100%;
+        width: 70px;
+        background: none;
+        border: none;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 10px;
+    }
+    .top-bar .go-back:hover{
+        background-color: lightgray;
+    }
+    .top-bar .go-back img{
+        height: 40%;
+    }
+    .top-bar .logo{
+        height: 25px;
+        margin: 0;
+    }
+</style>
+
+<section class="top-bar">
+    <button class="go-back" onclick="history.back()">
+    <img src="icons/left-arrow.png">
+    </button>
+    <img src="images/logo.svg" class="logo">
+
+    <button class="info-button" onclick="window.location.href='User%20Info.html?id=1'">
+        <img src="icons/user_icon.png">
+    </button>
+</section>
+    

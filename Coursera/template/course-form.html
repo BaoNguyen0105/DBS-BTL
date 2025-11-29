@@ -1,0 +1,150 @@
+
+
+<style>
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+z-index: 2;
+}
+.overlay.hidden{
+    display: none;
+}
+.course-form{
+	z-index: 3;
+	position: fixed;
+	width: 80%;
+	height: 700px;
+	max-width: 1000px;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	overflow-y: auto;
+	padding: 20px;
+	font-size: 20px;
+	border-radius: 10px;
+	background-color: rgb(227, 227, 227);
+	border: 1px solid black;
+	box-shadow: 3px 3px black;
+}
+.course-form input{
+	width: 100%;
+	height: 30px;
+	font-size: 20px;
+}
+.course-form textarea{
+	width: 100%;
+	resize: vertical;
+	height: 300px;
+}
+.course-form select{
+    width: 100%;
+    height: 34px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+.course-form .button-area{
+	display: flex;
+	margin-top: 20px;
+}
+.course-form button{
+	width: 100px;
+	height: 40px;
+	font-size: 20px;
+	margin-left: 20px;
+}
+.course-form .cancel{
+	margin-left: auto;
+	background-color: white;
+	color: red;
+	border: 1px solid red;
+}
+.course-form .cancel:hover{
+	background-color: red;
+	color: white;
+	cursor: pointer;
+}
+.course-form .submit{
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+}
+.course-form .submit:hover{
+	background-color: blue;
+	color: white;
+	cursor: pointer;
+}
+</style>
+<div class="overlay"></div>
+<form class="course-form" id="course-form">
+	<label for="edit-title">Title:</label><br>
+		<input type="text" id="edit-title" name="title" value=""><br>
+
+	<label for="edit-language">Language:</label><br>
+		<input type="text" id="edit-language" name="language" value=""><br>
+
+	<label for="edit-description">Description:</label><br>
+		<textarea id="edit-description" name="description"></textarea><br>
+
+	<label for="edit-price">Price (USD):</label><br>
+		<input type="number" step="0.01" min="0" id="edit-price" name="price" value=""><br>
+
+	<label for="edit-level">Level:</label><br>
+		<select id="edit-level" name="level">
+			<option value="">Select level</option>
+			<option value="Beginner" >Beginner</option>
+			<option value="Intermediate">Intermediate</option>
+			<option value="Advanced">Advanced</option>
+		</select><br>
+
+	<label for="edit-duration">Duration:</label><br>
+		<input type="text" id="edit-duration" name="duration" value=""><br>
+	
+	<label for="edit-specialization">Specialization:</label><br>
+		<input type="text" id="edit-specialization" name="specialization" value=""><br>
+
+	<div class="button-area">
+		<button class="cancel" id="cancel">Cancel</button>
+		<button class="submit" id="accept">Save</button>
+	</div>
+</form>
+
+<script>
+	const courseForm=document.getElementById("course-form");
+	courseForm.querySelector("#cancel").addEventListener("click", (e)=>{
+		e.preventDefault();
+		courseForm.classList.add("hidden");
+		document.querySelector(".overlay").classList.add("hidden");
+	});
+	courseForm.querySelector("#accept").addEventListener("click", async (e)=>{
+		e.preventDefault();
+		const title=courseForm.querySelector("#edit-title").value;
+		const language=courseForm.querySelector("#edit-language").value;
+		const description=courseForm.querySelector("#edit-description").value;
+		const price=courseForm.querySelector("#edit-price").value;
+		const level=courseForm.querySelector("#edit-level").value;
+		const duration=courseForm.querySelector("#edit-duration").value;
+		const specialization=courseForm.querySelector("#edit-specialization").value;
+	
+		const res = await fetch("http://localhost:3000/api/courses", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ "title":title, "teacherId":teacherId }),
+            });
+		if (!res.ok) {
+			alert("Failed to create course");
+			return;
+		}
+		const CourseID=res.json().newCourseId;
+
+		const res2 = await fetch(`http://localhost:3000/api/courses/${encodeURIComponent(CourseID)}`, {
+				method: "PUT",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ "language":language, "description":description, "price":Number(price), "level":level, "duration":duration, "specialization":specialization, "teacherId":teacherId }),
+			});
+	});
+
+</script>

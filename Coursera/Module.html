@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Module 1</title>
+	<link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/Module.css">
+</head>
+<body>
+	<div class="overlay"></div>
+
+	<div id="top-bar"></div>
+
+	<div class="sidebar-container">
+	<aside class="side-bar" id="side-bar">
+		<div>
+		<p class="title">Data analyst beginner course</p>
+		</div>
+		<div style="position: relative;" class="module">
+			<button class="module-button active" id="1">Module 1</button>
+		</div>
+		<div style="position: relative;" class="module">
+			<button class="module-button" id="2">Module 2</button>
+		</div>
+		<div style="position: relative;" class="module">
+			<button class="module-button" id="3">Module 3</button>
+		</div>
+		
+	</aside>
+	
+	<button class="interact-button">
+		<img src="icons/Hamburger_icon.svg" alt="Toggle sidebar">
+	</button>
+	</div>
+	
+	<section class="material">
+		<div class="reading">
+			<iframe src="https://www.deeplearningbook.org/" width="100%" height="100%"></iframe>
+		</div>
+	</section>
+	
+	<section class="material">
+    <div class="video">
+        <iframe 
+			width="100%" 
+			height="100%" 
+			src="https://www.youtube.com/embed/I0_951_MPE0?si=p07HKl-x5xMFNLko" 
+			title="YouTube video player" 
+			frameborder="0" 
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+			referrerpolicy="strict-origin-when-cross-origin" 
+			allowfullscreen>
+		</iframe>
+    </div>
+	</section>
+	
+	<section class="material">
+		<div class="quiz" id="quiz"></div>
+	</section>
+  
+	<div id="add-material">
+		
+	</div>
+	
+
+	<div id="footer"></div>
+	<script type="module" src="js/Module.js"></script>
+</body>
+</html>

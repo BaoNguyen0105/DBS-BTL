@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/Home page.css">
+	<title>Home page</title>
+	<link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div id="top-bar"></div>
+	<div id="course-form"></div>
+
+	<div class="courses">
+		<div class="table-head">
+			<p class="title">Courses</p>
+			<div class="search-box">
+				<input placeholder="Search course" class="input-box">
+				<button class="search-button">
+					<img src="icons/search_icon.png" style="height: 30px;">
+				</button>
+			</div>
+			<div class="filter">
+				<button class="filter-button">
+					<img src="icons/filter.png" alt="">
+				</button>
+				<form action="" class="filter-form hidden">
+					<p>Price</p>
+					<div style="display: flex; width: 100%; gap: 8px;">
+						<label for="from" style="flex: 1;">
+							<input type="number" id="from" name="from" placeholder="from" style="width: 100%;"> 
+						</label>
+						<label for="to" style="flex: 1;">
+							<input type="number" id="to" name="to" placeholder="to" style="width: 100%;">
+						</label>
+					</div>
+					
+					<p>Level</p>
+					<label for="level">
+						<select name="level" id="level">
+							<option value="">All</option>
+							<option value="beginner">Beginner</option>
+							<option value="intermediate">Intermediate</option>
+							<option value="advanced">Advanced</option>
+						</select>
+					</label>
+					
+					<p>Language</p>
+					<label for="language">
+						<select name="language" id="language">
+							<option value="">All</option>
+							<option value="english">English</option>
+							<option value="vietnamese">Vietnamese</option>
+						</select>
+					</label>
+					
+					<p>Teacher ID</p>
+					<label for="teacher-id">
+						<input type="text" id="teacher-id" name="teacher-id" placeholder="teacher-id">
+					</label>
+					
+					<p>Specialization</p>
+					<label for="specialization">
+						<input type="text" id="specialization" name="specialization" placeholder="specialization">
+					</label>
+					
+					<button type="button" class="apply-button">Apply</button>
+				</form>
+			</div>	
+		</div>
+		<section class="course-table">
+			<!-- Course items will be dynamically added here -->
+		</section>
+	</div>
+	
+	<div id="footer"></div>
+
+	<script type="module" src="js/Home page.js"></script>
+</body>
+</html>

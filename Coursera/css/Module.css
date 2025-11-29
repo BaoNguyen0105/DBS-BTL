@@ -1,0 +1,187 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh -70px);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: 2;
+}
+.overlay.hidden{
+    display: none;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-container.hidden {
+  transform: translateX(-400px); /* Adjust based on sidebar width */
+}
+
+.side-bar {
+  position: relative;
+  background-color: white;
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.side-bar .title {
+  font-size: 30px;
+  margin: 0;
+  padding: 30px;
+  font-weight: bold;
+  background-image: url('../images/banner 2.png');
+  color: white;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.side-bar .module-button {
+  height: 70px;
+  flex-shrink: 0;
+  font-size: 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  padding-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  position: relative;
+}
+
+.side-bar .active {
+  background-color: lightskyblue;
+  color: white;
+  font-weight: bold;
+}
+.side-bar .add-module{
+  height: 70px;
+  font-size: 20px;
+  border: none;
+}
+.side-bar .add-module:hover{
+  background-color: lightgray;
+}
+
+.interact-button {
+  position: absolute;
+  right: -50px; /* Position relative to sidebar */
+  top: 80px;
+  height: 50px;
+  width: 60px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: -1;
+}
+
+.interact-button:hover {
+  background-color: lightgray;
+}
+
+.module-button:hover {
+  background-color: lightgray;
+}
+
+.active:hover {
+  background-color: lightblue;
+}
+
+.material{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 1000px;
+    position: relative;
+}
+
+.reading{
+    width: 100%;
+    height: 1000px;
+}
+
+.video{
+    width: 100%;
+    height: 562px;
+}
+
+.quiz{
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 3px 3px ;
+    overflow: hidden;
+    position: relative;
+}
+
+.add-material-button{
+  width: 100%;
+  height: 100px;
+  border: none;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.add-material-button:hover{
+  background-color: lightgray;
+  cursor: pointer;
+}
+.side-bar .delete-module{
+  position:absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: none;
+}
+.side-bar .delete-module:hover{
+  cursor: pointer;
+  filter: brightness(0.7);
+}
+
+.material .delete-material{
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  border: none;
+  position: absolute;
+  right: 15px;
+  top: -40px;
+}
+.material .delete-material:hover{
+  filter: brightness(0.7);
+  cursor: pointer;
+}

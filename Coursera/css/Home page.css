@@ -1,0 +1,263 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh -70px);
+}
+.hidden{
+	display: none;
+}
+
+.courses{
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+.courses .table-head{
+	display: flex;
+	margin-bottom: 10px;
+	align-items: center;
+	height: 50px;
+}
+
+.courses .search-box{
+	display: flex;
+	margin-left: auto;
+	height: 100%;
+	border-radius: 25px;
+	overflow: hidden;
+	border: 1px solid gray;
+}
+.courses .input-box{
+	height: 100%;
+	width: 300px;
+	font-size: 20px;
+	box-sizing: border-box;
+	border: none;
+	margin-left: 20px;
+	outline: none;
+}
+
+
+.courses .search-button{
+	margin:0;
+	background-color: lightgray;
+	border: 0;
+	width: 50px;
+	height: 100%;
+	border-radius: 25px;
+}
+
+.courses .search-button:hover{
+	background-color: gray;
+	cursor: pointer;
+}
+.courses .filter{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	margin-left: 10px;
+
+}
+.courses .filter-button{
+	margin: 0;
+	padding: 0;
+	
+	background-color: lightgray;
+	border: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 25px;
+}
+.courses .filter-button:hover{
+	background-color: gray;
+	cursor: pointer;
+}
+.courses .filter-button img{
+	width: 25px;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+
+.courses .filter-form{
+	position: absolute;
+	top: 60px;
+	right: 0;
+	background-color: white;
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 20px;
+	z-index: 1;
+	width: 400px;
+	height: 550px;
+	background-color: white;
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+.courses .filter-form p{
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0;
+}
+.courses .filter-form label{
+	display: block;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	font-size: 18px;
+	padding-left: 20px;
+}
+.courses .filter-form input{
+	height: 30px;
+	font-size: 20px;
+	width: 100%;
+}
+.courses .filter-form select{
+	height: 30px;
+	font-size: 20px;
+	width: 100%;
+}
+
+.courses .filter-form .apply-button{
+	background-color: lightgray;
+	border: none;
+	border-radius: 10px;
+	width: 100px;
+	height: 40px;
+	font-size: 18px;
+	cursor: pointer;
+	font-weight: bold;
+}
+.courses .title{
+	margin: 0;
+	padding-left: 20px;
+	font-size: 50px;
+	font-weight: bold;
+
+}
+
+.course-table{
+	display: grid;
+	margin-top: 0;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 30px;
+	padding: 20px 20px;
+	background-color: lightgray;
+	border-radius: 10px;
+}
+
+@media (min-width: 1020px) {
+    .course-table {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.course-table .item{
+	width: 100%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.course-table .item .delete-course,
+.course-table .item .delete-course:visited {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background:none;
+	color: red;
+	border: none;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	
+}
+
+.course-table .item .course-name{
+	font-size: 25px;
+	margin: 0;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.course-table .item .teacher-name{
+	margin: 0;
+	font-size: 20px;
+	font-style: italic;
+	padding-left: 15px;
+}
+
+.course-table .item .partner-name{
+	margin-top: auto;
+	margin-left: 10px;
+}
+
+.course-table .item img{
+	width: 100%;
+  height: 150px;  
+  object-fit: cover;
+}
+
+.course-table .item .price{
+	margin-top: 0;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	color: lightgreen;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-right: 20px;
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+
+.course-table .item .completion{
+	margin-top: 0;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	color: blue;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-right: 20px;
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+
+
+.course-table .course-link,
+.course-table .course-link:visited {
+    text-decoration: none;
+    color: inherit !important;
+}
+
+.course-table .course-link:hover,
+.course-table .course-link:visited:hover {
+    color: purple !important;
+}
+
+.add-course{
+	background-color: rgb(232, 230, 230);
+	border-radius: 10px;
+	border: none;
+	font-size: 150px;
+	height: 300px;
+	width: 100%;
+}
+
+
+.add-course:hover{
+	background-color: gray;
+	color: white;
+	cursor: pointer;
+}

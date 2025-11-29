@@ -1,0 +1,167 @@
+<style>
+.quiz-topbar{
+    width:100%;
+    display: flex;
+    height: 50px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.timer{
+    font-size: 25px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.submit-button{
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    margin-right: 20px;
+    
+    color: blue;
+    background-color: white;
+    border: 2px solid blue;
+}
+.submit-button:hover{
+    background-color: blue;
+    color: white;
+}
+.scroll-questions{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.scroll-questions button{
+    min-width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid black;
+    margin-right: 10px;
+    padding: 0;
+}
+.scroll-questions button:hover{
+    background-color: lightgray;
+}
+.scroll-questions .active{
+    background-color: blue;
+    color: white;
+}
+.scroll-questions .active:hover{
+    background-color: blue;
+}
+
+.scroll-questions::-webkit-scrollbar{
+    height: 5px;
+    background-color: white;
+
+}
+.scroll-questions::-webkit-scrollbar-thumb{
+    background-color: gray;
+}
+
+.question{
+    height: 60%;
+    overflow-y: auto;
+}
+
+.question-number{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.question-text{
+    font-size: 20px;
+    margin-left: 20px;
+}
+.question label{
+    font-size: 20px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.quiz-footer{
+    display: flex;
+}
+
+.previous, .next{
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    margin-right: 20px;
+    
+    background-color: blue;
+    color: white;
+    border: none;
+}
+.previous:hover, .next:hover{
+    filter: brightness(0.7);
+}
+
+.previous{
+    margin-left: 50px;
+}
+.next{
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+</style>
+
+<div class="quiz-topbar">
+    <div class="scroll-questions">
+        <button class="active">Q1</button>
+        <button>Q2</button>
+        <button>Q3</button>
+        <button>Q4</button>
+        <button>Q5</button>
+        <button>Q6</button>
+        <button>Q7</button>
+        <button>Q8</button>
+        <button>Q9</button>
+        <button>Q10</button>
+        <button>Q11</button>
+        <button>Q12</button>
+        <button>Q13</button>
+        <button>Q14</button>
+        <button>Q15</button>
+    </div>
+    <p class="timer" id="timer">0:00:60</span></p>
+    <button class="submit-button">Submit</button>
+</div>
+
+
+<p class="question-number">Question 1</p>
+<form id="question" class="question">
+  <p class="question-text">What is the capital of France?</p>
+  
+  <label>
+    <input type="radio" name="q1" value="london"> London
+  </label>
+  
+  <label>
+    <input type="radio" name="q1" value="paris"> Paris
+  </label>
+  
+  <label>
+    <input type="radio" name="q1" value="berlin"> Berlin
+  </label>
+
+  
+</form>
+<div class="quiz-footer">
+    <button class="previous">Previous</button>
+    <button class="next">Next</button>
+</div>
+<script>
+    
+</script>
+

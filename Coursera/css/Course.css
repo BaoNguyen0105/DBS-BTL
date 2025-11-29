@@ -1,0 +1,140 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh -70px);
+}
+
+.main-info{
+    background-image: url('../images/banner\ 2.png');
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10vw;
+}
+
+.main-info .course-name{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.main-info .teacher-name{
+    font-size: 20px;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+.main-info .partner-name{
+    font-size: 15px;
+    margin-left: 40px;
+}
+
+.main-info .action-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.main-info .action-button{
+    margin-left: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.1;
+    color: darkblue;
+}
+.main-info .action-button:hover{
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.other-info{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 30px;
+}
+
+.other-info .title{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+.other-info .value{
+    margin: 0;
+}
+
+.thread-area{
+    margin-left: 10vw;
+    margin-top: 100px;
+    margin-right: 10vw;
+}
+
+.thread-area .make-thread{
+    display: flex;
+    flex-wrap: wrap;
+}
+.thread-area .make-thread textarea{
+    flex: 1;
+    resize: vertical;
+    min-height: 80px;
+    font-size: 20px;
+}
+.thread-area .make-thread img{
+    height: 80px;
+    margin-right: 10px;
+}
+
+.thread-area .make-thread .post-button{
+    width: 100%;
+    margin-left: 80%;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+
+    background-color: blue;
+    color: white;
+    border: none;
+
+    font-weight: bold;
+}
+.thread-area .make-thread .post-button:hover{
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+    cursor: pointer;
+}
+
+.thread-area .title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.thread-area .thread{
+    font-size: 20px;
+}
+
+.thread-area .thread .author{
+    font-weight: bold;
+}
+
+.thread-area .thread .content{
+    text-align: justify;
+}
+
+.thread-area .thread .reply{
+    margin-left: 10px;
+    padding-left: 40px;
+    border-left: 2px solid #e0e0e0;
+}
